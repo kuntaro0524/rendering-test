@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Component2 } from "./Component2";
 import { Component3 } from "./Component3";
 export const Component1 = () => {
@@ -6,9 +6,9 @@ export const Component1 = () => {
 
   const [index, setIndex] = useState(0);
 
-  const onClickButton = () => {
+  const onClickButton = useCallback(() => {
     setIndex(index + 1);
-  };
+  }, [index]);
 
   return (
     <>
